@@ -1,1 +1,16 @@
+# Virtual environment
 venv/
+ 
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+ 
+# SQLite DB
+dishrank.db
+*.db
+
+# Static IDE / OS files
+.vscode/
+*.swp
+.DS_Store

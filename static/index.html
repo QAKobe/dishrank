@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>DishRank — MVP</title>
+ <link rel="stylesheet" href="/ui/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>DishRank</h1>
+    <p class="muted">Rate the food, not the restaurant. (MVP)</p>
+
+    <div id="health" class="muted">Checking server…</div>
+
+    <!-- Add form -->
+    <div class="card">
+      <h2>Add a Dish</h2>
+      <form id="dishForm" autocomplete="on">
+        <div class="row">
+          <div>
+            <label>Place</label>
+            <input name="place" placeholder="Restaurant Name" required />
+          </div>
+          <div>
+            <label>Dish name</label>
+            <input name="name" placeholder="Dish Name" required />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>Category</label>
+            <input name="category" placeholder="e.g., burger, ramen, dessert" />
+          </div>
+          <div>
+            <label>Rating (1–5)</label>
+            <input name="rating" type="number" min="1" max="5" step="0.1" placeholder="4.5" required />
+          </div>
+          <div>
+            <label>Your name / nickname (optional)</label>
+            <input name="nickname" placeholder="Anonymous" />
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:14px">
+          <button type="submit">Add Dish</button>
+          <span id="formMsg" class="muted" style="align-self:center"></span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Table -->
+    <div class="card">
+      <h2>Dishes</h2>
+      <div id="count" class="muted"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Place</th><th>Name</th><th>Category</th><th>Rating</th></tr>
+          </thead>
+          <tbody id="dishRows"></tbody>
+        </table>
+      </div>
+      <div class="btn-row" style="margin-top:10px">
+        <button id="refreshBtn" type="button">Refresh</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bar muted">
+    <strong>Status:</strong> <span id="barStatus">Checking…</span>
+  </div>
+
+  <script src="/ui/script.js"></script>
+</body>
+</html>
